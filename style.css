@@ -1,0 +1,47 @@
+#output {
+  position: relative;
+}
+
+.snakeBody {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.fL::before, 
+.fR::before,
+.fT::before,
+.fB::before,
+.tL::after,
+.tR::after,
+.tT::after,
+.tB::after {
+  position: absolute;
+  content: "";
+  
+  background-color: #aaa;
+  border-radius: 15px;
+  
+  left: -15px;
+  right: -15px;
+  top: -15px;
+  bottom: -15px;
+}
+.fL::before { animation: fL 0.2s linear 0s 1 normal both running; }
+.fR::before { animation: fR 0.2s linear 0s 1 normal both running; }
+.fT::before { animation: fT 0.2s linear 0s 1 normal both running; }
+.fB::before { animation: fB 0.2s linear 0s 1 normal both running; }
+
+.tL::after { animation: tL 0.2s linear 0s 1 normal both running; }
+.tR::after { animation: tR 0.2s linear 0s 1 normal both running; }
+.tT::after { animation: tT 0.2s linear 0s 1 normal both running; }
+.tB::after { animation: tB 0.2s linear 0s 1 normal both running; }
+
+@keyframes fL { 0% { left:-55px; }	100% { left: -15px} }
+@keyframes fR { 0% { right:-55px; }	100% { right: -15px} }
+@keyframes fT { 0% { top:-55px; }	100% { top: -15px} }
+@keyframes fB { 0% { bottom:-55px; }	100% { bottom: -15px} }
+@keyframes tL { 0% { left:-15px; }	100% { left: -55px} }
+@keyframes tR { 0% { right:-15px; }	100% { right: -55px} }
+@keyframes tT { 0% { top:-15px; }	100% { top: -55px} }
+@keyframes tB { 0% { bottom:-15px; }	100% { bottom: -55px} }
